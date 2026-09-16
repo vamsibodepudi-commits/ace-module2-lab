@@ -106,8 +106,7 @@ jobs:
           workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
           service_account: ${{ vars.GCP_SA_EMAIL }}
           project_id: ${{ vars.GCP_QUOTA_PROJECT }}
-          # Class-shared audience: the provider only accepts OIDC tokens
-          # minted with this `aud` value (second factor next to the repo name).
+          audience: //iam.googleapis.com/${{ vars.GCP_WIF_PROVIDER }}
           id_token_audience: ${{ secrets.WIF_AUDIENCE }}
 
       - name: Install CodeMender CLI (cm)
