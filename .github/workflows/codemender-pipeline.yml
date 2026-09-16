@@ -108,7 +108,7 @@ jobs:
           project_id: ${{ vars.GCP_QUOTA_PROJECT }}
           # Class-shared audience: the provider only accepts OIDC tokens
           # minted with this `aud` value (second factor next to the repo name).
-          audience: ${{ secrets.WIF_AUDIENCE }}
+          id_token_audience: ${{ secrets.WIF_AUDIENCE }}
 
       - name: Install CodeMender CLI (cm)
         run: |
