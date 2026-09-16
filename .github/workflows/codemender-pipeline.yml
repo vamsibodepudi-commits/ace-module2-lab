@@ -106,7 +106,8 @@ jobs:
           workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
           service_account: ${{ vars.GCP_SA_EMAIL }}
           project_id: ${{ vars.GCP_QUOTA_PROJECT }}
-          audience: ${{ secrets.WIF_AUDIENCE }}
+          audience: //iam.googleapis.com/${{ vars.GCP_WIF_PROVIDER }}
+          id_token_audience: ${{ secrets.WIF_AUDIENCE }}
 
       - name: Install CodeMender CLI (cm)
         run: |
